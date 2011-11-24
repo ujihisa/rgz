@@ -6,10 +6,10 @@ Gem::Specification.new do |s|
   s.name        = "rgz"
   s.version     = Rgz::VERSION
   s.authors     = ["ujihisa"]
-  s.email       = ["ujihisa@gmail.com"]
+  s.email       = ["ujihisa at gmail.com"]
   s.homepage    = ""
-  s.summary     = %q{TODO: Write a gem summary}
-  s.description = %q{TODO: Write a gem description}
+  s.summary     = %q{something like jar for cruby}
+  s.description = %q{something like jar for cruby}
 
   s.rubyforge_project = "rgz"
 
