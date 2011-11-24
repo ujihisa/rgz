@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+$LOAD_PATH << File.expand_path(File.dirname(__FILE__)) + '/../lib/'
+require 'rgz'
+
+# fname = ARGV.shift or abort 'give me an .rgz file!'
+# abort "it's not an .rgz file!" unless /\.rgz\z/ =~ fname
+# abort "the file doesn't exist" unless File.exist? fname
+# p Rgz::include_paths fname
+
+dir = ARGV.shift or Dir.pwd
+Rgz.make_rgz dir

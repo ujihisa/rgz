@@ -1,5 +1,26 @@
-require "rgz/version"
+require 'tmpdir'
+require 'rgz/version'
 
 module Rgz
-  # Your code goes here...
+  def include_paths(libpath)
+    t = Dir.mktmpdir
+    Dir.chdir t do
+      system 'pwd'
+      tar_xzvf libpath
+    end
+    Dir.glob(t + '/**/lib')
+  end
+  module_function :include_paths
+
+  def make_rgz(dir)
+    system 'bundle install .'
+    system 'tar czvf ruby.rgz ruby'
+  end
+
+  def tar_xzvf(path)
+    # FIXME: don't use tar external command(?)
+    system 'tar', 'xzvf', path, [:err, :out] => '/dev/null' # TODO /dev/null
+  end
+  module_function :tar_xzvf
+  private :tar_xzvf
 end
