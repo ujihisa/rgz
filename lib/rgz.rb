@@ -2,10 +2,13 @@ require 'tmpdir'
 require 'rgz/version'
 
 module Rgz
+  RgzNotFound = Class.new Exception
+
   def include_paths(libpath)
+    raise RgzNotFound unless File.exist? libpath
+    libpath = File.expand_path libpath
     t = Dir.mktmpdir
     Dir.chdir t do
-      system 'pwd'
       tar_xzvf libpath
     end
     Dir.glob(t + '/**/lib')
@@ -16,6 +19,7 @@ module Rgz
     system 'bundle install .'
     system 'tar czvf ruby.rgz ruby'
   end
+  module_function :make_rgz
 
   def tar_xzvf(path)
     # FIXME: don't use tar external command(?)
