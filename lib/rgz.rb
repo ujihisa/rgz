@@ -16,8 +16,8 @@ module Rgz
   module_function :include_paths
 
   def make_rgz(dir)
-    system 'bundle install .'
-    system 'tar czvf ruby.rgz ruby'
+    system "bundle install --path #{dir}"
+    system "tar czvf ruby.rgz #{dir}"
   end
   module_function :make_rgz
 

@@ -7,5 +7,5 @@ require 'rgz'
 # abort "the file doesn't exist" unless File.exist? fname
 # p Rgz::include_paths fname
 
-dir = ARGV.shift || Dir.pwd
+dir = File.expand_path(ARGV.shift || Dir.pwd)
 Rgz.make_rgz dir
