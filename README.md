@@ -14,8 +14,11 @@ Generates "ruby" directory and "ruby.rgz" file. Use the rgz file later.
     $LOAD_PATH.concat Rgz.include_paths 'the-rgz-file-path.rgz'
     require 'a-library-in-the-rgz-file'
 
-## Author
+## Authors
 
-Tatsuhiro Ujihisa
+* Tatsuhiro Ujihisa <http://ujihisa.blogspot.com>
+* Super Momonga <http://supermomonga.com>
 
-<http://ujihisa.blogspot.com>
+## License
+
+GPL version 3 or later
