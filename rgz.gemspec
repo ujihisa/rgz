@@ -5,9 +5,9 @@ require "rgz/version"
 Gem::Specification.new do |s|
   s.name        = "rgz"
   s.version     = Rgz::VERSION
-  s.authors     = ["ujihisa"]
-  s.email       = ["ujihisa at gmail.com"]
-  s.homepage    = ""
+  s.authors     = %w[ujihisa supermomonga]
+  s.email       = ["ujihisa at gmail.com", 'supermomonga\'s email']
+  s.homepage    = "https://github.com/ujihisa/rgz"
   s.summary     = %q{something like jar for cruby}
   s.description = %q{something like jar for cruby}
 
